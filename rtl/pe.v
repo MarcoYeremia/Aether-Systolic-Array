@@ -25,7 +25,6 @@ parameter ACC_WIDTH = 32
         else begin
             out_a <= in_a;
             out_b <= in_b;
-        
            
             if (clr_acc) begin
                 out_acc <= in_a * in_b;
@@ -35,7 +34,6 @@ parameter ACC_WIDTH = 32
                 out_acc <= out_acc + (in_a*in_b);
             end
         end
-
     end
     
 
