@@ -19,7 +19,7 @@ module skew_buffer #(
             always @(posedge clk or negedge rst_n) begin
                 if (!rst_n) begin
                     for (i = 0; i < DEPTH; i = i + 1) begin
-                        shift_reg[i] <= '0;
+                        shift_reg[i] <= {DATA_WIDTH{1'b0}};
                     end
                 end
                 else begin
@@ -34,7 +34,7 @@ module skew_buffer #(
         
         end
 
-    end generate
+    endgenerate
 
 
 

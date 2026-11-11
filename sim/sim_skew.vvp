@@ -1,0 +1,343 @@
+#! /foss/tools/iverilog/bin/vvp
+:ivl_version "14.0 (devel)" "(s20251012-145-g9b0d46b4-dirty)";
+:ivl_delay_selection "TYPICAL";
+:vpi_time_precision - 12;
+:vpi_module "/foss/tools/iverilog/lib/ivl/system.vpi";
+:vpi_module "/foss/tools/iverilog/lib/ivl/vhdl_sys.vpi";
+:vpi_module "/foss/tools/iverilog/lib/ivl/vhdl_textio.vpi";
+:vpi_module "/foss/tools/iverilog/lib/ivl/v2005_math.vpi";
+:vpi_module "/foss/tools/iverilog/lib/ivl/va_math.vpi";
+S_0x558ee816df70 .scope module, "tb_skew_buffer" "tb_skew_buffer" 2 3;
+ .timescale -9 -12;
+P_0x558ee816e100 .param/l "DATA_WIDTH" 0 2 5, +C4<00000000000000000000000000001000>;
+v0x558ee8196ac0_0 .var "clk", 0 0;
+v0x558ee8196c10_0 .var "d_in0", 7 0;
+v0x558ee8196cd0_0 .var "d_in1", 7 0;
+v0x558ee8196dd0_0 .var "d_in2", 7 0;
+v0x558ee8196ea0_0 .var "d_in3", 7 0;
+v0x558ee8196f40_0 .net "d_out0", 7 0, L_0x558ee81632b0;  1 drivers
+v0x558ee8197010_0 .net "d_out1", 7 0, L_0x558ee81638e0;  1 drivers
+v0x558ee81970e0_0 .net "d_out2", 7 0, L_0x558ee8163f50;  1 drivers
+v0x558ee81971b0_0 .net "d_out3", 7 0, L_0x558ee81645c0;  1 drivers
+v0x558ee8197310_0 .var "rst_n", 0 0;
+E_0x558ee8130a40 .event posedge, v0x558ee8164060_0;
+S_0x558ee816e1a0 .scope module, "sb0" "skew_buffer" 2 26, 3 1 0, S_0x558ee816df70;
+ .timescale 0 0;
+    .port_info 0 /INPUT 1 "clk";
+    .port_info 1 /INPUT 1 "rst_n";
+    .port_info 2 /INPUT 8 "d_in";
+    .port_info 3 /OUTPUT 8 "d_out";
+P_0x558ee8162300 .param/l "DATA_WIDTH" 0 3 2, +C4<00000000000000000000000000001000>;
+P_0x558ee8162340 .param/l "DEPTH" 0 3 3, +C4<00000000000000000000000000000000>;
+v0x558ee8164060_0 .net "clk", 0 0, v0x558ee8196ac0_0;  1 drivers
+v0x558ee81646d0_0 .net "d_in", 7 0, v0x558ee8196c10_0;  1 drivers
+v0x558ee8164d40_0 .net "d_out", 7 0, L_0x558ee81632b0;  alias, 1 drivers
+v0x558ee81620a0_0 .net "rst_n", 0 0, v0x558ee8197310_0;  1 drivers
+S_0x558ee81304e0 .scope generate, "g_bypass" "g_bypass" 3 12, 3 12 0, S_0x558ee816e1a0;
+ .timescale 0 0;
+L_0x558ee81632b0 .functor BUFZ 8, v0x558ee8196c10_0, C4<00000000>, C4<00000000>, C4<00000000>;
+S_0x558ee8194810 .scope module, "sb1" "skew_buffer" 2 31, 3 1 0, S_0x558ee816df70;
+ .timescale 0 0;
+    .port_info 0 /INPUT 1 "clk";
+    .port_info 1 /INPUT 1 "rst_n";
+    .port_info 2 /INPUT 8 "d_in";
+    .port_info 3 /OUTPUT 8 "d_out";
+P_0x558ee8194a10 .param/l "DATA_WIDTH" 0 3 2, +C4<00000000000000000000000000001000>;
+P_0x558ee8194a50 .param/l "DEPTH" 0 3 3, +C4<00000000000000000000000000000001>;
+v0x558ee8160200_0 .net "clk", 0 0, v0x558ee8196ac0_0;  alias, 1 drivers
+v0x558ee8194f40_0 .net "d_in", 7 0, v0x558ee8196cd0_0;  1 drivers
+v0x558ee8195000_0 .net "d_out", 7 0, L_0x558ee81638e0;  alias, 1 drivers
+v0x558ee81950f0_0 .net "rst_n", 0 0, v0x558ee8197310_0;  alias, 1 drivers
+S_0x558ee8194c30 .scope generate, "g_delay" "g_delay" 3 12, 3 12 0, S_0x558ee8194810;
+ .timescale 0 0;
+v0x558ee8160160_0 .array/port v0x558ee8160160, 0;
+L_0x558ee81638e0 .functor BUFZ 8, v0x558ee8160160_0, C4<00000000>, C4<00000000>, C4<00000000>;
+v0x558ee8162140_0 .var/i "i", 31 0;
+v0x558ee8160160 .array "shift_reg", 0 0, 7 0;
+E_0x558ee8130c40/0 .event negedge, v0x558ee81620a0_0;
+E_0x558ee8130c40/1 .event posedge, v0x558ee8164060_0;
+E_0x558ee8130c40 .event/or E_0x558ee8130c40/0, E_0x558ee8130c40/1;
+S_0x558ee8195250 .scope module, "sb2" "skew_buffer" 2 36, 3 1 0, S_0x558ee816df70;
+ .timescale 0 0;
+    .port_info 0 /INPUT 1 "clk";
+    .port_info 1 /INPUT 1 "rst_n";
+    .port_info 2 /INPUT 8 "d_in";
+    .port_info 3 /OUTPUT 8 "d_out";
+P_0x558ee8195430 .param/l "DATA_WIDTH" 0 3 2, +C4<00000000000000000000000000001000>;
+P_0x558ee8195470 .param/l "DEPTH" 0 3 3, +C4<00000000000000000000000000000010>;
+v0x558ee8195a80_0 .net "clk", 0 0, v0x558ee8196ac0_0;  alias, 1 drivers
+v0x558ee8195b90_0 .net "d_in", 7 0, v0x558ee8196dd0_0;  1 drivers
+v0x558ee8195c70_0 .net "d_out", 7 0, L_0x558ee8163f50;  alias, 1 drivers
+v0x558ee8195d30_0 .net "rst_n", 0 0, v0x558ee8197310_0;  alias, 1 drivers
+S_0x558ee8195680 .scope generate, "g_delay" "g_delay" 3 12, 3 12 0, S_0x558ee8195250;
+ .timescale 0 0;
+v0x558ee8195960_1 .array/port v0x558ee8195960, 1;
+L_0x558ee8163f50 .functor BUFZ 8, v0x558ee8195960_1, C4<00000000>, C4<00000000>, C4<00000000>;
+v0x558ee8195860_0 .var/i "i", 31 0;
+v0x558ee8195960 .array "shift_reg", 1 0, 7 0;
+S_0x558ee8195ea0 .scope module, "sb3" "skew_buffer" 2 41, 3 1 0, S_0x558ee816df70;
+ .timescale 0 0;
+    .port_info 0 /INPUT 1 "clk";
+    .port_info 1 /INPUT 1 "rst_n";
+    .port_info 2 /INPUT 8 "d_in";
+    .port_info 3 /OUTPUT 8 "d_out";
+P_0x558ee8196080 .param/l "DATA_WIDTH" 0 3 2, +C4<00000000000000000000000000001000>;
+P_0x558ee81960c0 .param/l "DEPTH" 0 3 3, +C4<00000000000000000000000000000011>;
+v0x558ee81966e0_0 .net "clk", 0 0, v0x558ee8196ac0_0;  alias, 1 drivers
+v0x558ee81967a0_0 .net "d_in", 7 0, v0x558ee8196ea0_0;  1 drivers
+v0x558ee8196880_0 .net "d_out", 7 0, L_0x558ee81645c0;  alias, 1 drivers
+v0x558ee8196970_0 .net "rst_n", 0 0, v0x558ee8197310_0;  alias, 1 drivers
+S_0x558ee81962a0 .scope generate, "g_delay" "g_delay" 3 12, 3 12 0, S_0x558ee8195ea0;
+ .timescale 0 0;
+v0x558ee81965a0_2 .array/port v0x558ee81965a0, 2;
+L_0x558ee81645c0 .functor BUFZ 8, v0x558ee81965a0_2, C4<00000000>, C4<00000000>, C4<00000000>;
+v0x558ee81964a0_0 .var/i "i", 31 0;
+v0x558ee81965a0 .array "shift_reg", 2 0, 7 0;
+    .scope S_0x558ee8194c30;
+T_0 ;
+    %wait E_0x558ee8130c40;
+    %load/vec4 v0x558ee81950f0_0;
+    %nor/r;
+    %flag_set/vec4 8;
+    %jmp/0xz  T_0.0, 8;
+    %pushi/vec4 0, 0, 32;
+    %store/vec4 v0x558ee8162140_0, 0, 32;
+T_0.2 ; Top of for-loop
+    %load/vec4 v0x558ee8162140_0;
+    %cmpi/s 1, 0, 32;
+	  %jmp/0xz T_0.3, 5;
+    %pushi/vec4 0, 0, 8;
+    %ix/getv/s 3, v0x558ee8162140_0;
+    %ix/load 4, 0, 0; Constant delay
+    %assign/vec4/a/d v0x558ee8160160, 0, 4;
+T_0.4 ; for-loop step statement
+    %load/vec4 v0x558ee8162140_0;
+    %addi 1, 0, 32;
+    %store/vec4 v0x558ee8162140_0, 0, 32;
+    %jmp T_0.2;
+T_0.3 ; for-loop exit label
+    %jmp T_0.1;
+T_0.0 ;
+    %load/vec4 v0x558ee8194f40_0;
+    %ix/load 3, 0, 0;
+    %flag_set/imm 4, 0;
+    %ix/load 4, 0, 0; Constant delay
+    %assign/vec4/a/d v0x558ee8160160, 0, 4;
+    %pushi/vec4 1, 0, 32;
+    %store/vec4 v0x558ee8162140_0, 0, 32;
+T_0.5 ; Top of for-loop
+    %load/vec4 v0x558ee8162140_0;
+    %cmpi/s 1, 0, 32;
+	  %jmp/0xz T_0.6, 5;
+    %load/vec4 v0x558ee8162140_0;
+    %subi 1, 0, 32;
+    %ix/vec4/s 4;
+    %load/vec4a v0x558ee8160160, 4;
+    %ix/getv/s 3, v0x558ee8162140_0;
+    %ix/load 4, 0, 0; Constant delay
+    %assign/vec4/a/d v0x558ee8160160, 0, 4;
+T_0.7 ; for-loop step statement
+    %load/vec4 v0x558ee8162140_0;
+    %addi 1, 0, 32;
+    %store/vec4 v0x558ee8162140_0, 0, 32;
+    %jmp T_0.5;
+T_0.6 ; for-loop exit label
+T_0.1 ;
+    %jmp T_0;
+    .thread T_0;
+    .scope S_0x558ee8195680;
+T_1 ;
+    %wait E_0x558ee8130c40;
+    %load/vec4 v0x558ee8195d30_0;
+    %nor/r;
+    %flag_set/vec4 8;
+    %jmp/0xz  T_1.0, 8;
+    %pushi/vec4 0, 0, 32;
+    %store/vec4 v0x558ee8195860_0, 0, 32;
+T_1.2 ; Top of for-loop
+    %load/vec4 v0x558ee8195860_0;
+    %cmpi/s 2, 0, 32;
+	  %jmp/0xz T_1.3, 5;
+    %pushi/vec4 0, 0, 8;
+    %ix/getv/s 3, v0x558ee8195860_0;
+    %ix/load 4, 0, 0; Constant delay
+    %assign/vec4/a/d v0x558ee8195960, 0, 4;
+T_1.4 ; for-loop step statement
+    %load/vec4 v0x558ee8195860_0;
+    %addi 1, 0, 32;
+    %store/vec4 v0x558ee8195860_0, 0, 32;
+    %jmp T_1.2;
+T_1.3 ; for-loop exit label
+    %jmp T_1.1;
+T_1.0 ;
+    %load/vec4 v0x558ee8195b90_0;
+    %ix/load 3, 0, 0;
+    %flag_set/imm 4, 0;
+    %ix/load 4, 0, 0; Constant delay
+    %assign/vec4/a/d v0x558ee8195960, 0, 4;
+    %pushi/vec4 1, 0, 32;
+    %store/vec4 v0x558ee8195860_0, 0, 32;
+T_1.5 ; Top of for-loop
+    %load/vec4 v0x558ee8195860_0;
+    %cmpi/s 2, 0, 32;
+	  %jmp/0xz T_1.6, 5;
+    %load/vec4 v0x558ee8195860_0;
+    %subi 1, 0, 32;
+    %ix/vec4/s 4;
+    %load/vec4a v0x558ee8195960, 4;
+    %ix/getv/s 3, v0x558ee8195860_0;
+    %ix/load 4, 0, 0; Constant delay
+    %assign/vec4/a/d v0x558ee8195960, 0, 4;
+T_1.7 ; for-loop step statement
+    %load/vec4 v0x558ee8195860_0;
+    %addi 1, 0, 32;
+    %store/vec4 v0x558ee8195860_0, 0, 32;
+    %jmp T_1.5;
+T_1.6 ; for-loop exit label
+T_1.1 ;
+    %jmp T_1;
+    .thread T_1;
+    .scope S_0x558ee81962a0;
+T_2 ;
+    %wait E_0x558ee8130c40;
+    %load/vec4 v0x558ee8196970_0;
+    %nor/r;
+    %flag_set/vec4 8;
+    %jmp/0xz  T_2.0, 8;
+    %pushi/vec4 0, 0, 32;
+    %store/vec4 v0x558ee81964a0_0, 0, 32;
+T_2.2 ; Top of for-loop
+    %load/vec4 v0x558ee81964a0_0;
+    %cmpi/s 3, 0, 32;
+	  %jmp/0xz T_2.3, 5;
+    %pushi/vec4 0, 0, 8;
+    %ix/getv/s 3, v0x558ee81964a0_0;
+    %ix/load 4, 0, 0; Constant delay
+    %assign/vec4/a/d v0x558ee81965a0, 0, 4;
+T_2.4 ; for-loop step statement
+    %load/vec4 v0x558ee81964a0_0;
+    %addi 1, 0, 32;
+    %store/vec4 v0x558ee81964a0_0, 0, 32;
+    %jmp T_2.2;
+T_2.3 ; for-loop exit label
+    %jmp T_2.1;
+T_2.0 ;
+    %load/vec4 v0x558ee81967a0_0;
+    %ix/load 3, 0, 0;
+    %flag_set/imm 4, 0;
+    %ix/load 4, 0, 0; Constant delay
+    %assign/vec4/a/d v0x558ee81965a0, 0, 4;
+    %pushi/vec4 1, 0, 32;
+    %store/vec4 v0x558ee81964a0_0, 0, 32;
+T_2.5 ; Top of for-loop
+    %load/vec4 v0x558ee81964a0_0;
+    %cmpi/s 3, 0, 32;
+	  %jmp/0xz T_2.6, 5;
+    %load/vec4 v0x558ee81964a0_0;
+    %subi 1, 0, 32;
+    %ix/vec4/s 4;
+    %load/vec4a v0x558ee81965a0, 4;
+    %ix/getv/s 3, v0x558ee81964a0_0;
+    %ix/load 4, 0, 0; Constant delay
+    %assign/vec4/a/d v0x558ee81965a0, 0, 4;
+T_2.7 ; for-loop step statement
+    %load/vec4 v0x558ee81964a0_0;
+    %addi 1, 0, 32;
+    %store/vec4 v0x558ee81964a0_0, 0, 32;
+    %jmp T_2.5;
+T_2.6 ; for-loop exit label
+T_2.1 ;
+    %jmp T_2;
+    .thread T_2;
+    .scope S_0x558ee816df70;
+T_3 ;
+    %delay 5000, 0;
+    %load/vec4 v0x558ee8196ac0_0;
+    %inv;
+    %store/vec4 v0x558ee8196ac0_0, 0, 1;
+    %jmp T_3;
+    .thread T_3;
+    .scope S_0x558ee816df70;
+T_4 ;
+    %vpi_call 2 50 "$dumpfile", "sim/sim_skew.vcd" {0 0 0};
+    %vpi_call 2 51 "$dumpvars", 32'sb00000000000000000000000000000000, S_0x558ee816df70 {0 0 0};
+    %pushi/vec4 0, 0, 1;
+    %store/vec4 v0x558ee8196ac0_0, 0, 1;
+    %pushi/vec4 0, 0, 1;
+    %store/vec4 v0x558ee8197310_0, 0, 1;
+    %pushi/vec4 0, 0, 8;
+    %store/vec4 v0x558ee8196c10_0, 0, 8;
+    %pushi/vec4 0, 0, 8;
+    %store/vec4 v0x558ee8196cd0_0, 0, 8;
+    %pushi/vec4 0, 0, 8;
+    %store/vec4 v0x558ee8196dd0_0, 0, 8;
+    %pushi/vec4 0, 0, 8;
+    %store/vec4 v0x558ee8196ea0_0, 0, 8;
+    %delay 15000, 0;
+    %pushi/vec4 1, 0, 1;
+    %store/vec4 v0x558ee8197310_0, 0, 1;
+    %wait E_0x558ee8130a40;
+    %pushi/vec4 11, 0, 8;
+    %store/vec4 v0x558ee8196c10_0, 0, 8;
+    %pushi/vec4 21, 0, 8;
+    %store/vec4 v0x558ee8196cd0_0, 0, 8;
+    %pushi/vec4 31, 0, 8;
+    %store/vec4 v0x558ee8196dd0_0, 0, 8;
+    %pushi/vec4 41, 0, 8;
+    %store/vec4 v0x558ee8196ea0_0, 0, 8;
+    %wait E_0x558ee8130a40;
+    %pushi/vec4 12, 0, 8;
+    %store/vec4 v0x558ee8196c10_0, 0, 8;
+    %pushi/vec4 22, 0, 8;
+    %store/vec4 v0x558ee8196cd0_0, 0, 8;
+    %pushi/vec4 32, 0, 8;
+    %store/vec4 v0x558ee8196dd0_0, 0, 8;
+    %pushi/vec4 42, 0, 8;
+    %store/vec4 v0x558ee8196ea0_0, 0, 8;
+    %wait E_0x558ee8130a40;
+    %pushi/vec4 13, 0, 8;
+    %store/vec4 v0x558ee8196c10_0, 0, 8;
+    %pushi/vec4 23, 0, 8;
+    %store/vec4 v0x558ee8196cd0_0, 0, 8;
+    %pushi/vec4 33, 0, 8;
+    %store/vec4 v0x558ee8196dd0_0, 0, 8;
+    %pushi/vec4 43, 0, 8;
+    %store/vec4 v0x558ee8196ea0_0, 0, 8;
+    %wait E_0x558ee8130a40;
+    %pushi/vec4 14, 0, 8;
+    %store/vec4 v0x558ee8196c10_0, 0, 8;
+    %pushi/vec4 24, 0, 8;
+    %store/vec4 v0x558ee8196cd0_0, 0, 8;
+    %pushi/vec4 34, 0, 8;
+    %store/vec4 v0x558ee8196dd0_0, 0, 8;
+    %pushi/vec4 44, 0, 8;
+    %store/vec4 v0x558ee8196ea0_0, 0, 8;
+    %wait E_0x558ee8130a40;
+    %pushi/vec4 0, 0, 8;
+    %store/vec4 v0x558ee8196c10_0, 0, 8;
+    %pushi/vec4 0, 0, 8;
+    %store/vec4 v0x558ee8196cd0_0, 0, 8;
+    %pushi/vec4 0, 0, 8;
+    %store/vec4 v0x558ee8196dd0_0, 0, 8;
+    %pushi/vec4 0, 0, 8;
+    %store/vec4 v0x558ee8196ea0_0, 0, 8;
+    %pushi/vec4 5, 0, 32;
+T_4.0 %dup/vec4;
+    %cmpi/s 0, 0, 32;
+    %jmp/1xz T_4.1, 5;
+    %jmp/1 T_4.1, 4;
+    %subi 1, 0, 32;
+    %wait E_0x558ee8130a40;
+    %jmp T_4.0;
+T_4.1 ;
+    %pop/vec4 1;
+    %vpi_call 2 107 "$display", "Simulasi Skew Buffer Selesai!" {0 0 0};
+    %vpi_call 2 108 "$finish" {0 0 0};
+    %end;
+    .thread T_4;
+# The file index is used to find the file name in the following table.
+:file_names 4;
+    "N/A";
+    "<interactive>";
+    "testbench/tb_skew_buffer.v";
+    "rtl/skew_buffer.v";
